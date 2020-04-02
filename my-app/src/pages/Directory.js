@@ -6,7 +6,7 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // data state
+      // data to be sorted
       data: [
         { id: 1, name: "Maria Morones", 
         department: "Management", 
@@ -88,26 +88,22 @@ class Table extends React.Component {
           role: "supervisor"
         }
       ],
-      // search state
+      // search 
       search: ""
     };
-    // bind the context for compareBy & sortBy to this component instance
     this.compareBy.bind(this);
     this.sortBy.bind(this);
   }
 
   // Handles user input limit to 20 characters
   updateSearch(event) {
-    // console.log(event.target.value);
     this.setState({ search: event.target.value.substr(0.2) });
   }
 
-  // compare by key used in sort function, sets the columm to sort by
   compareBy(key) {
     return function(a, b) {
       if (a[key] < b[key]) return -1;
       if (a[key] > b[key]) return 1;
-      // console.log(a[key]," | ",b[key]);
       return 0;
     };
   }
