@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Directory from "./pages/Directory";
+import Data from "./pages/data";
 import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
 
@@ -10,8 +10,8 @@ function App() {
       <div>
         <Navbar />
         <Wrapper>
-          <Route exact path="/" component={Directory} />
-          <Route exact path="/directory" component={Directory} />
+          <Route exact path="/" component={Data} />
+          <Route exact path="/data" component={Data} />
         </Wrapper>
       </div>
     </Router>

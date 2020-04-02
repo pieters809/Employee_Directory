@@ -108,8 +108,8 @@ class Table extends React.Component {
     };
   }
 
-  // actual sort done here pass field name to sort
-  // use compareBy function  to get it
+  // sort done here 
+
   sortBy(key) {
     console.log(key);
     let arrayCopy = [...this.state.data];
@@ -118,9 +118,7 @@ class Table extends React.Component {
   }
 
   render() {
-    // Filter date.name if there is a user input. If not render all data.
-    // tolowercase allows full name serach both user input and data set to lower case
-    // for better searching
+  
     let filteredNames = this.state.data.filter(data => {
       return (
         data.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
@@ -132,7 +130,7 @@ class Table extends React.Component {
 
     return (
       <Container style={{ minHeight: "80%" }}>
-        {/* onChange calls updateSearch function that sets the state which then changes the filter */}
+        {/* onChange calls the updateSearch function  */}
         <div className="text-center mt-3 mb-3 font-weight-bold">
           Search Employee Name: &nbsp;
           <input
@@ -142,7 +140,6 @@ class Table extends React.Component {
           />
         </div>
 
-        {/* onClick calls sortBy function */}
         <table className="table">
           <thead className="thead-light">
             <tr>
